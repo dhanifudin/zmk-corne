@@ -11,7 +11,6 @@
 #define LOW 1
 #define RSE 2
 #define ADJ 3
-#define FUN 4
 
 / {
   keymap {
@@ -27,7 +26,7 @@
         &kp TAB        &kp Q &kp W &kp E &kp R &kp T  &kp Y &kp U  &kp I     &kp O   &kp P    &kp MINUS
         &mt LCTRL ESC  &kp A &kp S &kp D &kp F &kp G  &kp H &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
         &mt LSHFT LBRC &kp Z &kp X &kp C &kp V &kp B  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RBRC
-        &mt LALT LBKT  &mt LGUI LPAR &lt LOW SPACE    &lt RSE RET &mt RGUI RPAR &mt RALT RBKT
+        &mt LALT LBKT  &lt LOW SPACE &mt LGUI LPAR    &mt RGUI RPAR &lt RSE RET &mt RALT RBKT
       >;
     };
 
@@ -41,7 +40,7 @@
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4  &kp N5   &kp N6   &kp N7   &kp N8 &kp N9  &kp N0   &kp EQUAL
         &kp DEL   &trans &trans &trans &trans  &trans   &kp HOME &kp DOWN &kp UP &kp END &kp BSLH &kp BSPC
         &trans    &trans &trans &trans &trans  &trans   &trans   &trans   &trans &trans  &trans   &trans
-                                &trans &to FUN &trans   &to ADJ  &to FUN  &trans
+                                &trans &trans  &to ADJ  &trans   &trans   &trans
       >;
     };
 
@@ -55,7 +54,7 @@
         &kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp STAR &kp LPAR  &kp RPAR &kp PLUS
         &kp DEL &trans   &trans &trans   &trans   &trans      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp PIPE &kp BSPC
         &trans  &trans   &trans &trans   &trans   &trans      &trans    &trans   &trans   &trans    &trans   &trans
-                    	           &trans  &to FUN  &to ADJ     &trans    &to FUN  &trans
+                    	           &trans  &trans   &trans      &to ADJ   &trans   &trans
       >;
     };
 
@@ -68,7 +67,7 @@
       bindings = <
         &kp F11 &kp F1     &kp F2       &kp F3       &kp F4 &kp F5      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
         &kp F12 &kp F6     &kp F7       &kp F8       &kp F9 &kp F10     &trans       &trans   &trans     &trans     &trans &trans
-        &trans  &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &trans &bootloader &bootloader  &kp K_PP &kp K_PREV &kp K_NEXT &trans &trans
+        &reset  &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &trans &bootloader &bootloader  &kp K_PP &kp K_PREV &kp K_NEXT &trans &reset
                                         &trans       &trans &trans      &trans       &trans   &trans
       >;
     };
