@@ -28,14 +28,14 @@
       label = "TAP_DANCE_LALT";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <mt LALT LPAR>, <&kp LBKT>;
+      bindings = <&mt LALT LPAR>, <&kp LBKT>;
     };
     tdr: tap_dance_r {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_RALT";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <mt RALT RPAR>, <&kp RBKT>;
+      bindings = <&mt RALT RPAR>, <&kp RBKT>;
     };
     tde: tap_dance_esc {
       compatible = "zmk,behavior-tap-dance";
