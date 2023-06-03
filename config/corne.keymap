@@ -51,12 +51,12 @@
       COMBO(lctl, &kp LCTRL, 13 16)
       COMBO(lalt, &kp LALT, 14 16)
       COMBO(lgui, &kp LGUI, 15 16)
-      COMBO(lsht, &kp LSHT, 16 17)
+      COMBO(lsht, &kp LSHFT, 16 17)
 
       COMBO(rctl, &kp RCTRL, 19 22)
       COMBO(ralt, &kp RALT, 19 21)
       COMBO(rgui, &kp RGUI, 19 20)
-      COMBO(rsht, &kp RSHT, 18 19)
+      COMBO(rsht, &kp RSHFT, 18 19)
     };
   };
 
