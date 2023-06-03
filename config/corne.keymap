@@ -42,7 +42,7 @@
       label = "TAP_DANCE_ESC";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&kp j>, <&kp ESC>;
+      bindings = <&kp J>, <&kp ESC>;
     };
     combos {
       compatible = "zmk,combos";
