@@ -48,22 +48,14 @@
       compatible = "zmk,combos";
       // capsword fj
       COMBO(capsword, &caps_word, 16 19)
-      // LCTRL fj
       COMBO(lctl, &kp LCTRL, 13 16)
-      // LALT fj
       COMBO(lalt, &kp LALT, 14 16)
-      // LGUI fj
       COMBO(lgui, &kp LGUI, 15 16)
-      // LSHT fj
       COMBO(lsht, &kp LSHT, 16 17)
 
-      // RCTRL h'
       COMBO(rctl, &kp RCTRL, 19 22)
-      // RALT hl
       COMBO(ralt, &kp RALT, 19 21)
-      // RGUI hk
       COMBO(rgui, &kp RGUI, 19 20)
-      // RSHT hj
       COMBO(rsht, &kp RSHT, 18 19)
     };
   };
