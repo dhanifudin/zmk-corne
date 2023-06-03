@@ -13,7 +13,7 @@
 #define L_TAB 3
 #define L_BSC 4
 
-#defnie COMBO(NAME, BINDINGS, KEYPOS) \
+#define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
     timeout-ms = <50>; \
     bindings = <BINDINGS>; \
