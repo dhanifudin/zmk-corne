@@ -37,17 +37,21 @@
       tapping-term-ms = <200>;
       bindings = <&mt RGUI RPAR>, <&kp RBKT>;
     };
-    tde: tap_dance_esc {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_ESC";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp J>, <&kp ESC>;
-    };
     combos {
       compatible = "zmk,combos";
       // capsword fj
+      // lctrl af
+      // lalt  sf
+      // lgui  df
+      // lshft fg
+      // rshft hj
+      // rgui  jk
+      // ralt  jl
+      // rctrl j;
+      // '     as
+      // "     l;
       COMBO(capsword, &caps_word, 16 19)
+      COMBO(sqt, &kp SQT, 13 14)
       COMBO(lctl, &kp LCTRL, 13 16)
       COMBO(lalt, &kp LALT, 14 16)
       COMBO(lgui, &kp LGUI, 15 16)
@@ -57,6 +61,7 @@
       COMBO(ralt, &kp RALT, 19 21)
       COMBO(rgui, &kp RGUI, 19 20)
       COMBO(rsht, &kp RSHFT, 18 19)
+      COMBO(dqt, &kp DQT, 21 22)
     };
   };
 
@@ -71,60 +76,60 @@
 //                    | ALT | TAB | SPC |   | RET | BKSP | ALT |
       bindings = <
         &kp TAB        &kp Q &kp W &kp E &kp R &kp T  &kp Y &kp U  &kp I     &kp O   &kp P    &kp MINUS
-        &mt LCTRL ESC  &kp A &kp S &kp D &kp F &kp G  &kp H &tde   &kp K     &kp L   &kp SEMI &mt RCTRL SQT
+        &mt LCTRL ESC  &kp A &kp S &kp D &kp F &kp G  &kp H &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
         &mt LSHFT LBRC &kp Z &kp X &kp C &kp V &kp B  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RBRC
         &lt L_TAB TAB &lt L_SPC SPACE &tdl  &tdr &lt L_RET RET &lt L_BSC BSPC
       >;
     };
 
     space_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |      | F1  | F2  | F3  | F4  | F5  |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT | F6  | F7  | F8  | F9  | F10 |   |     |     |     |     |     |      |
-//                    | GUI | LWR | ENT |   | SPC | RSE | ALT |
+// ---------------------------------------------------------------------
+// | `   | 1 | 2 | 3 | 4 | 5 |   |  6   |  7   | 8    |  9  | 0 | =    |
+// | DEL | ` | - | = | [ | ] |   | HOME | PGDN | PGUP | END | \ | BSPC |
+// |     |   |   |   |   |   |   |      |      |      |     |   |      |
+//               |   |   |   |   |      | ESC  | DEL  |
       bindings = <
         &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4   &kp N5   &kp N6   &kp N7    &kp N8    &kp N9  &kp N0   &kp EQUAL
         &kp DEL   &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp HOME &kp PG_DN &kp PG_UP &kp END &kp BSLH &kp BSPC
         &trans    &trans    &trans    &trans    &trans   &trans   &trans   &trans    &trans    &trans  &trans   &trans
-                                      &trans    &trans   &trans   &trans   &trans &kp DEL
+                                      &trans    &trans   &trans   &trans   &kp ESC   &kp DEL
       >;
     };
 
     return_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |      |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   |
-//                    | GUI | ADJ | ENT |   | SPC | ADJ | ALT |
+// ----------------------------------------------------------
+// | ~   | ! | @ | # | $ | % |   | ^ | & | * | ( | ) |  +   |
+// | DEL | ~ | _ | + | { | } |   | L | D | U | R | | | BSPC |
+// |     |   |   |   |   |   |   |   |   |   |   |   |      |
+//           |   |   |   |   |   |   |   |
       bindings = <
         &kp TILDE &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp STAR &kp LPAR  &kp RPAR &kp PLUS
         &kp DEL   &kp TILDE &kp UNDER &kp PLUS &kp LBRC &kp RBRC    &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp PIPE &kp BSPC
         &trans    &trans    &trans    &trans   &trans   &trans      &trans    &trans   &trans   &trans    &trans   &trans
-                    	                &trans   &trans   &trans      &trans    &trans   &trans
+                    	                &trans   &kp ESC  &trans      &trans    &trans   &trans
       >;
     };
 
     tab_layer {
-// -----------------------------------------------------------------------------------------
-// | MUTE |VOLDN|VOLUP| PREV| NEXT| PLAY|   | BT1 | BT2 | BT3 | BT4 | BT5 | BTCLR|
-// | CAPS |     |     |     |     |     |   |     |     |     |     |     |      |
-// |      |     |     |     | BRID| BRIU|   |     |     |     |     |     |      |
-//                    | GUI |     | ENT |   | SPC |     | ALT |
+// ------------------------------------------------------------------------------
+// | F11 | F1   | F2  | F3  | F4 | F5 |   | F6 | F7   | F8   | F9   | F10 | F12 |
+// |     | F11  |     |     |    |    |   |    |      |      |      | F12 |     |
+// |     | MUTE | VDN | VUP |    |    |   |    | PLAY | PREV | NEXT |     |     |
+//                    |     |    |    |   |    |      |      |
       bindings = <
         &kp F11 &kp F1     &kp F2       &kp F3       &kp F4 &kp F5  &kp F6 &kp F7   &kp F8     &kp F9     &kp F10 &kp F12
-        &trans  &trans     &trans       &trans       &trans &trans  &trans &trans   &trans     &trans     &trans  &trans
+        &trans  &kp F11    &trans       &trans       &trans &trans  &trans &trans   &trans     &trans     &kp F12 &trans
         &trans  &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &trans &trans  &trans &kp K_PP &kp K_PREV &kp K_NEXT &trans  &trans
                                         &trans       &trans &trans  &trans &trans   &trans
       >;
     };
 
     backspace_layer {
-// -----------------------------------------------------------------------------------------
-// | MUTE |VOLDN|VOLUP| PREV| NEXT| PLAY|   | BT1 | BT2 | BT3 | BT4 | BT5 | BTCLR|
-// | CAPS |     |     |     |     |     |   |     |     |     |     |     |      |
-// |      |     |     |     | BRID| BRIU|   |     |     |     |     |     |      |
-//                    | GUI |     | ENT |   | SPC |     | ALT |
+// ----------------------------------------------------------------
+// |  | BT0 | BT1 | BT2 | BT3 | BT4  |   |      |  |  |  |  | CLR |
+// |  |     |     |     |     |      |   |      |  |  |  |  |     |
+// |  |     |     | CLR |     | BOOT |   | BOOT |  |  |  |  |     |
+//                |     |     |      |   |      |  |  |
       bindings = <
         &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans &bt BT_CLR
         &trans &trans       &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans &trans
