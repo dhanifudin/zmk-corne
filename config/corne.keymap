@@ -32,10 +32,10 @@
     };
     tdr: tap_dance_r {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_RALT";
+      label = "TAP_DANCE_RGUI";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&mt RALT RPAR>, <&kp RBKT>;
+      bindings = <&mt RGUI RPAR>, <&kp RBKT>;
     };
     tde: tap_dance_esc {
       compatible = "zmk,behavior-tap-dance";
@@ -73,7 +73,7 @@
         &kp TAB        &kp Q &kp W &kp E &kp R &kp T  &kp Y &kp U  &kp I     &kp O   &kp P    &kp MINUS
         &mt LCTRL ESC  &kp A &kp S &kp D &kp F &kp G  &kp H &tde   &kp K     &kp L   &kp SEMI &mt RCTRL SQT
         &mt LSHFT LBRC &kp Z &kp X &kp C &kp V &kp B  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt RSHFT RBRC
-        &tdl &lt L_TAB TAB &lt L_SPC SPACE  &lt L_RET RET &lt L_BSC BSPC &tdr
+        &lt L_TAB TAB &lt L_SPC SPACE &tdl  &tdr &lt L_RET RET &lt L_BSC BSPC
       >;
     };
 
@@ -87,7 +87,7 @@
         &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4   &kp N5   &kp N6   &kp N7    &kp N8    &kp N9  &kp N0   &kp EQUAL
         &kp DEL   &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp HOME &kp PG_DN &kp PG_UP &kp END &kp BSLH &kp BSPC
         &trans    &trans    &trans    &trans    &trans   &trans   &trans   &trans    &trans    &trans  &trans   &trans
-                                      &trans    &trans   &trans   &trans   &kp DEL  &trans
+                                      &trans    &trans   &trans   &trans   &trans &kp DEL
       >;
     };
 
