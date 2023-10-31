@@ -53,21 +53,21 @@
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4  &kp N5   &kp N6   &kp N7   &kp N8 &kp N9  &kp N0   &kp EQUAL
         &kp DEL   &trans &trans &trans &trans  &trans   &kp HOME &kp DOWN &kp UP &kp END &kp BSLH &kp BSPC
         &trans    &trans &trans &trans &trans  &trans   &trans   &trans   &trans &trans  &trans   &trans
-                                &trans &trans  &to ADJ  &trans   &to ADJ  &trans
+                                &trans &trans  &mo ADJ  &trans   &mo ADJ  &trans
       >;
     };
 
     raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |      |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
+// |      |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "" |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |  ~   |
 //                    | GUI | ADJ | ENT |   | SPC | ADJ | ALT |
       bindings = <
         &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp STAR &kp LPAR  &kp RPAR &kp PLUS
         &kp DEL   &trans   &trans &trans   &trans   &trans      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp PIPE &kp BSPC
         &trans    &trans   &trans &trans   &trans   &trans      &trans    &trans   &trans   &trans    &trans   &trans
-                    	            &trans   &to ADJ  &trans      &to ADJ   &trans   &trans
+                    	            &trans   &mo ADJ  &trans      &mo ADJ   &trans   &trans
       >;
     };
 
